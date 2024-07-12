@@ -110,6 +110,7 @@ function Lesson06() {
 	return (
 	  <div className='lesson-container'>
 		 <h4>Lesson 06</h4>
+		 <p>Урок TypeScript часть 1</p>
 	  </div>
 	);
  }
