@@ -1,11 +1,12 @@
 import MyButton from "../myButton/MyButton";
 import MyInput from "../myInput/MyInput";
-import './myForm.css'
+//import './myForm.css'
+import styles from "../myForm/myForm.module.css";
 
 export default function MyForm() {
 
   return (
-    <form className='myForm'>
+    <form className={styles.myForm}>
       <MyInput label={'Ваш логин:'} placeholder={'login'} type={'text'} name={'login'} />
       <MyInput label={'Действительная почта:'} placeholder={'email'} type={'email'} name={'email'}  />
       <MyInput label={'Ваш пароль:'} placeholder={'password'} type={'password'} name={'password'} />

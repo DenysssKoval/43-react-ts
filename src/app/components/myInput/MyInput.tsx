@@ -1,17 +1,19 @@
-import "./myInput.css";
+// import "./myInput.css";
+import styles from './myInput.module.css'
 
-interface IMyInputProps {
-  label: string;
-  name: string;
-  type: 'text' | 'password' | 'email' | 'number'; // Указаны типы, которые могут быть у input
-  placeholder: string;
+interface IInputProps {
+  label?: string;
+  name?: string;
+  type?: 'text' | 'password' | 'email' | 'number';
+  placeholder?: string;
 }
 
-export default function MyInput({ label, name, type, placeholder }: IMyInputProps) {
+export default function MyInput({ label = 'default', name='input', type='text', placeholder='default' }: IInputProps) {
+
   return (
-    <div className="myInput">
-      <label className='label'>{label}</label>
-      <input type={type} name={name} placeholder={placeholder} className='input' />
-    </div>
+    <>
+      <label className= {styles.myInput}>{label}</label>
+      <input type={type} name={name} placeholder={placeholder} />
+    </>
   );
 }

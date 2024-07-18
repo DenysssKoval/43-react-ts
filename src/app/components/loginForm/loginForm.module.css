@@ -1,0 +1,14 @@
+.loginForm {
+	display: flex;
+	flex-direction: column;
+}
+
+.loginForm input {
+	margin-bottom: 3px;
+}
+
+.loginForm > button {
+	background-color: orange;
+	border-color: white;
+	border-radius: 4px;
+}
