@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 // import styles from '../loginForm/loginForm.module.css'
 import styles from "./formGender.module.css";
+import * as Yup from "yup";
 // ## задание
 
 // Создайте компонент FormGender.tsx
@@ -9,6 +10,9 @@ import styles from "./formGender.module.css";
 // На onSubmit передавайте имя в api через url `https://api.genderize.io/?name=dmitrii`
 // После 'name=' передавайте строку из формы
 // Выведите данные на странице
+
+// 1. В FormGender.tsx добавьте валидацию для строки
+// 2. Сообщение об ошибке должно быть абсолютно спозиционированно относительно input и выведено в небольшом контейнере сбоку снизу.
 
 interface IGender {
   name: string;
@@ -21,6 +25,12 @@ interface IGenderData {
 }
 
 export default function FormGender() {
+	const schema = Yup.object().shape({
+		name: Yup
+		.string()
+		.typeError('enter your name')
+		.required('напиши имя')
+	});
   const [genderData, setGenderData] = useState<IGenderData>({
     name: "",
     gender: "",
@@ -37,6 +47,8 @@ export default function FormGender() {
     initialValues: {
       name: "",
     } as IGender,
+	 validationSchema: schema,
+	 validateOnChange: false,
     onSubmit: (values: IGender, { resetForm }) => {
       fetchGender(values.name);
       console.log(values);
@@ -66,6 +78,7 @@ export default function FormGender() {
           </p>
         )}
       </form>
+		<span className={styles.errors}>{formik.errors.name}</span>
     </div>
   );
 }

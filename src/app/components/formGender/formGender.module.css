@@ -12,3 +12,9 @@
 	border: 3px;
 	border-color: white;
 }
+.errors {
+	color: red;
+   position: absolute;
+   right: 150px;
+
+}

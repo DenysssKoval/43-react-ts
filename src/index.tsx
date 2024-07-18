@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import Lesson10 from './lessons/lesson10/Lesson10';
 // import Spinner from './lessons/lesson10/Spinner';
-import Lesson11 from './lessons/lesson11/Lesson11';
+// import Lesson11 from './lessons/lesson11/Lesson11';
+import Lesson12 from './lessons/lesson12/Lesson12';
 
 
 // import App from './app/App';
@@ -34,7 +35,8 @@ root.render(
 		 {/* <Lesson09/> */}
 		 {/* {/* <Lesson10 />
 		 <Spinner />  */}
-		 <Lesson11 />
+		 {/* <Lesson11 /> */}
+		 <Lesson12 />
 	</>
 );
 
