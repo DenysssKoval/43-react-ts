@@ -78,7 +78,7 @@ export default function FormGender() {
           </p>
         )}
       </form>
-		<span className={styles.errors}>{formik.errors.name}</span>
+		<div className={styles.errors}>{formik.errors.name}</div>
     </div>
   );
 }
